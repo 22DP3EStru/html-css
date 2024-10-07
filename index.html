@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mana Portfolio Lapa</title>
     <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
@@ -67,24 +68,47 @@
         <!-- Kartīte 1 -->
         <div class="card">
             <img src="https://via.placeholder.com/300x200" alt="Produkts 1">
-            <h3>Produkts 1</h3>
+            <h3>Par mani</h3>
             <p>Produkta apraksts un funkcijas.</p>
-            <button>Uzzināt vairāk</button>
+            <button onclick="openModal('modal1')">Uzzināt vairāk</button>
         </div>
         <!-- Kartīte 2 -->
         <div class="card">
             <img src="https://via.placeholder.com/300x200" alt="Produkts 2">
-            <h3>Produkts 2</h3>
+            <h3>Projekti</h3>
             <p>Produkta apraksts un funkcijas.</p>
-            <button>Uzzināt vairāk</button>
+            <button onclick="openModal('modal2')">Uzzināt vairāk</button>
         </div>
         <!-- Kartīte 3 -->
         <div class="card">
             <img src="https://via.placeholder.com/300x200" alt="Produkts 3">
-            <h3>Produkts 3</h3>
+            <h3>Izglītība</h3>
             <p>Produkta apraksts un funkcijas.</p>
             <button>Uzzināt vairāk</button>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Elīza Strūberga. Visas tiesības aizsargātas.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var x = document.querySelector("nav");
+            if (x.className === "") {
+                x.className += " responsive";
+            } else {
+                x.className = "";
+            }
+        }
+
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+    </script>
 </body>
 </html>
