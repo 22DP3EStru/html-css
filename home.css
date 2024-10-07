@@ -1,23 +1,168 @@
+/* Pamatstils */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Galvenes stils */
+header {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Par mani sadaļa */
+#about {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#about img {
+    max-width: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+/* Prasmes sadaļa */
+#skills {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.skill {
+    margin: 10px 0;
+}
+
+.skill span {
+    font-weight: bold;
+}
+
+.progress-bar {
+    background-color: #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.progress {
+    background-color: #0073e6;
+    height: 100%;
+    transition: width 0.3s;
+}
+
+/* Projekti sadaļa */
+#projects {
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.project {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+/* Kontaktu sadaļa */
+#contact {
+    background-color: #0073e6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#contact a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Kājene */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Media queries, responsivitāte */
+@media (max-width: 768px) {
+    #about {
+        flex-direction: column;
+    }
+
+    #about img {
+        margin-bottom: 20px;
+    }
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .card-container {
     display: flex;
     justify-content: space-around;
+    width: 80%;
 }
 
 .card {
-    position: relative;
-    width: 200px;
-    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.19), 0px 6px 6px rgba(0,0,0,0.23);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.card:hover {
-    box-shadow: 0px 14px 28px rgba(0,0,0,0.25), 0px 10px 10px rgba(0,0,0,0.22);
-    transform: translateY(-3px);
+    width: 300px;
+    margin: 20px;
+    text-align: center;
+    overflow: hidden;
 }
 
 .card img {
     width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card h3 {
+    margin: 15px 0;
+}
+
+.card p {
+    padding: 0 15px;
 }
 
 .card button {
@@ -28,11 +173,17 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 15px 0;
+    border: none;
     cursor: pointer;
-    transition-duration: 0.4s;
+    transition: background-color 0.4s;
 }
 
 .card button:hover {
     background-color: #45a049;
+}
+
+.card:hover {
+    box-shadow: 0px 14px 28px rgba(0,0,0,0.25), 0px 10px 10px rgba(0,0,0,0.22);
+    transform: translateY(-3px);
 }
