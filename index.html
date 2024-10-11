@@ -6,109 +6,154 @@
     <title>Mana Portfolio Lapa</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('nav-links');
+            if (nav.classList.contains('show')) {
+                nav.classList.remove('show');
+            } else {
+                nav.classList.add('show');
+            }
+        }
+        function openModal(modalId) {
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "block";
+            }
+        }
+
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function scrollToFooter() {
+            document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.onclick = function(event) {
+            var modal1 = document.getElementById('modal1');
+            var modal2 = document.getElementById('modal2');
+            var modal3 = document.getElementById('modal3');
+            if (event.target == modal1) {
+                modal1.style.display = "none";
+            }
+            if (event.target == modal2) {
+                modal2.style.display = "none";
+            }
+            if (event.target == modal3) {
+                modal3.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
 
-    <!-- Galvene -->
+    
     <header>
-        <h1>Mani sauc Elīza Strūberga</h1>
-        <nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <nav id="nav-links">
             <a href="#about">Par mani</a>
             <a href="#projects">Projekti</a>
-            <a href="#contact">Kontakti</a>
+            <a href="#izglitiba">Izglītība</a>
         </nav>
     </header>
 
-    <!-- Par mani sadaļa -->
+    
     <section id="about">
-        <img src="your-photo.jpg" alt="Mans foto">
         <div>
-            <h2>Par mani</h2>
+            <h3>Par mani</h3>
             <p>Esmu topošā programmētāja. Tiecos augstu, lai varētu parādīt savas spējas, ko esmu apguvusi līdz šim.</p>
         </div>
     </section>
 
-    <!-- Projekti sadaļa -->
-    <section id="projects">
-        <h2>Projekti</h2>
-        <div class="project">
-            <h3>Projekts 1</h3>
-            <p>Šis ir projekts par e-komercijas vietnes izveidi ar HTML, CSS un JavaScript.</p>
-            <a href="#">Apskatīt projektu</a>
-        </div>
-        <div class="project">
-            <h3>Projekts 2</h3>
-            <p>Šis ir portāla izstrādes projekts ar responsīvu dizainu.</p>
-            <a href="#">Apskatīt projektu</a>
-        </div>
-        <div class="project">
-            <h3>Projekts 3</h3>
-            <p>Portfolio vietnes izveide programmētājam.</p>
-            <a href="#">Apskatīt projektu</a>
-        </div>
-    </section>
-
-    <!-- Kontakti sadaļa -->
-    <section id="contact">
-        <h2>Kontakti</h2>
-        <p>Sazinies ar mani pa e-pastu: <a href="mailto:eliza.struberga@gmail.com">eliza.struberga@gmail.com</a></p>
-        <p>Seko man sociālajos tīklos:</p>
-        <a href="#">Facebook</a> | 
-        <a href="#">Instagram</a>
-    </section>
-
-    <!-- Kājene -->
-    <footer>
-        <p>&copy; 2024 Elīza Strūberga. Visas tiesības aizsargātas.</p>
-    </footer>
-
-</body>
-<body>
+    
     <div class="card-container">
-        <!-- Kartīte 1 -->
+        
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Produkts 1">
+            <img src="IMG_8018.JPEG" alt="Par mani">
             <h3>Par mani</h3>
-            <p>Produkta apraksts un funkcijas.</p>
+            <p>Šeit varat iepazīties, kas es tāda esmu.</p>
             <button onclick="openModal('modal1')">Uzzināt vairāk</button>
         </div>
-        <!-- Kartīte 2 -->
+       
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Produkts 2">
+            <img src="img_384.jpg" alt="Projekti">
             <h3>Projekti</h3>
-            <p>Produkta apraksts un funkcijas.</p>
+            <p>Varat aplūkot, kādus projektus esmu taisījusi.</p>
             <button onclick="openModal('modal2')">Uzzināt vairāk</button>
         </div>
-        <!-- Kartīte 3 -->
+
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Produkts 3">
+            <img src="img_3455.jpg" alt="Izglītība">
             <h3>Izglītība</h3>
-            <p>Produkta apraksts un funkcijas.</p>
-            <button>Uzzināt vairāk</button>
+            <p>Ielūkoties kāda izglītība man ir.</p>
+            <button onclick="openModal('modal3')">Uzzināt vairāk</button>
         </div>
     </div>
 
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h3>Par mani</h3>
+            <p>Esmu topošā programmētāja. Tiecos augstu, lai varētu parādīt savas spējas, ko esmu apguvusi līdz šim.</p>
+            <h4>Kontakti</h4>
+            <p>E-pasts: <a href="mailto:eliza@example.com">eliza@example.com</a></p>
+            <p>Telefons: +371 12345678</p>
+            <p>Adrese: Rīga, Latvija</p>
+            <h4>Sociālie tīkli</h4>
+            <p>
+                <a href="#">Facebook</a> | 
+                <a href="#">Instagram</a>
+            </p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h3>Projekti</h3>
+            <div class="project">
+                <h4>Projekts 1</h4>
+                <p>Šeit būs apskatāms pirmais projekts ko esmu taisījusi.</p>
+                <a href="#">Apskatīt projektu</a>
+            </div>
+            <div class="project">
+                <h4>Projekts 2</h4>
+                <p>Šeit būs apskatāms otrais projekts.</p>
+                <a href="#">Apskatīt projektu</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h3>Izglītība</h3>
+            <p>Informācija par manu izglītību.</p>
+            <ul>
+                <li>Ir pabeigta pamatskola un tagad mācos tehnikumā.</li>
+                <li>Programmēšanas valodas:</li>
+                <li>Mācos tādas valodas kā HTML, CSS, JavaScript, Python</li>
+                <li>Programmēšanas pieredze:</li>
+                <li>Programmēšanu sāku mācīties pirms 2 gadiem un vēl joprojām bieži mēģinu saprast kā un ko darīt.</li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div id="projects-container"></div>
+
+    
     <footer>
         <p>&copy; 2024 Elīza Strūberga. Visas tiesības aizsargātas.</p>
+        <a href="#contact" onclick="scrollToFooter()">Kontakti</a>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            var x = document.querySelector("nav");
-            if (x.className === "") {
-                x.className += " responsive";
-            } else {
-                x.className = "";
-            }
-        }
-
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-    </script>
 </body>
 </html>
